@@ -1,17 +1,30 @@
+//
+// Base Setup
+//
 var express = require('express');
 var app = express();
-var cool = require('cool-ascii-faces');
+var bodyParser = require('body-parser');
+
+// Configure app to use bodyParser() - This will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
+var router = express.Router();
+
+//
+// Define Routes
+//
+
 // Placeholder welcome message
-app.get('/', function(request, response) {
-  var result = 'Welcome to Jerk du Jour'
-  response.send(result);
+router.get('/', function(req, res) {
+    res.json({ message: 'Welcome to Jerk du Jour' });
 });
 
 // Sample report JSON data
+/*
 app.get('/abcd1234', function(request, response) {
   var jsonObj = {
     'id': 'abcd1234',
@@ -26,7 +39,16 @@ app.get('/abcd1234', function(request, response) {
   result = JSON.stringify(jsonObj);
   response.send(result);
 });
+*/
 
+//
+// Register Routes (all routes will be prefixed with /api)
+//
+app.use('/api', router);
+
+//
+// START THE SERVER
+//
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
