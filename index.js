@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
 });
 
 // Sample report JSON data
-app.get('/abcd1234/', function(request, response) {
+app.get('/abcd1234', function(request, response) {
   var jsonObj = {
     'id': 'abcd1234',
     'type': 'jerk_report',
