@@ -28,11 +28,6 @@ app.get('/abcd1234', function(request, response) {
 */
 
 //
-// Register Routes (all routes will be prefixed with /api)
-//
-app.use('/api', router);
-
-//
 // START THE SERVER
 //
 app.listen(app.get('port'), function() {
