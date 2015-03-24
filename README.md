@@ -1,4 +1,5 @@
 http://bshef.github.io/jerkdujour/
+https://jerkdujour.herokuapp.com/
 
 ### Jerks are Everywhere
 Those smug schmucks! Look at them -- double parking, littering, texting during movies, putting ketchup on a hot dog _(you monsters!)_
