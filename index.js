@@ -31,12 +31,13 @@ app.get('/reports', function(req, res) {
     res.send(reports);
 });
 app.get('/reports/:id', function(req, res) {
-    if(id:req.params.id in reports){
-        report = reports[id:req.params.id]
+    var id = req.params.id
+    if(id in reports){
+        report = reports[id]
         res.send(report)
     }
     else {
-        res.send('A report with ID ' + id:req.params.id + ' does not exist.')
+        res.send('A report with ID ' + id + ' does not exist.')
     }
 });
 
