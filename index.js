@@ -8,12 +8,12 @@ var report = require('./report');
 
 // Sample reports
 var reports = {};
-var report1_id = 'abcd1234'
-var report2_id = 'efgh5678'
-var report3_id = 'ijkl9123'
-reports[report1_id] = new report.report(report1_id)
-reports[report2_id] = new report.report(report2_id)
-reports[report3_id] = new report.report(report3_id)
+var report1_id = 'abcd1234';
+var report2_id = 'efgh5678';
+var report3_id = 'ijkl9123';
+reports[report1_id] = new report.report(report1_id);
+reports[report2_id] = new report.report(report2_id);
+reports[report3_id] = new report.report(report3_id);
 
 // RESTful API
 app.get('/', function(req, res) {
