@@ -1,4 +1,5 @@
 http://bshef.github.io/jerkdujour/
+
 https://jerkdujour.herokuapp.com/
 
 ### Jerks are Everywhere
