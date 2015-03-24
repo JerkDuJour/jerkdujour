@@ -28,13 +28,13 @@ app.get('/', function(req, res) {
     res.send('Welcome to Jerk du Jour API!');
 });
 app.get('/reports', function(req, res) {
-    res.send(reports);
+    res.send(JSON.stringify(reports));
 });
 app.get('/reports/:id', function(req, res) {
     var id = req.params.id
     if(id in reports){
         report = reports[id]
-        res.send(report)
+        res.send(JSON.stringify(report))
     }
     else {
         res.send('A report with ID ' + id + ' does not exist.')
