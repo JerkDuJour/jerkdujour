@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.set('port', (process.env.PORT || 5000));
 
 // RESTful API
 app.get('/reports', function(req, res) {
