@@ -3,6 +3,9 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 // RESTful API
+app.get('/', function(req, res) {
+    res.send('Welcome to Jerk du Jour!');
+});
 app.get('/reports', function(req, res) {
     res.send([{name:'report1'}, {name:'report2'}]);
 });
