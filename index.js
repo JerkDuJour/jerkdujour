@@ -4,16 +4,16 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 // Jerk du Jour specific resources
-var report = require('./report');
+var report = require('report');
 
 // Sample reports
 var reports = {};
 var report1_id = 'abcd1234';
 var report2_id = 'efgh5678';
 var report3_id = 'ijkl9123';
-reports[report1_id] = new report.report(report1_id);
-reports[report2_id] = new report.report(report2_id);
-reports[report3_id] = new report.report(report3_id);
+reports[report1_id] = new report.Report(report1_id);
+reports[report2_id] = new report.Report(report2_id);
+reports[report3_id] = new report.Report(report3_id);
 
 // RESTful API
 app.get('/', function(req, res) {

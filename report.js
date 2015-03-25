@@ -4,7 +4,7 @@ module.exports = {
   // Usage:
   // var report = require('./report')
   // var myReport = new report.report('abcd1234')
-   function report(id) {
+   function Report(id) {
     this.id = id;
     this.type = 'jerk_report';
     this.time = '1970-01-00T00:00:00Z';
@@ -17,5 +17,11 @@ module.exports = {
     this.severity = 0;
     this.description = '';
     this.notes = '';
+  }
+
+  // Prototype function isExpired()
+  // Returns whether or not the Report is expired (has an expired datetime)
+  Report.prototype.isExpired = function() {
+    return !(expired == '');
   }
 }
