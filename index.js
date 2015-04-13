@@ -8,7 +8,7 @@ var welcomeMessage = 'Welcome to Jerk du Jour API!';
 var Guid = require('guid');
 
 // Jerk du Jour specific resources
-var Report = require('report');
+var Report = require('./report');
 
 // Sample reports
 var reports = {};
