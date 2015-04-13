@@ -2,22 +2,35 @@
 var express = require('express');
 var app = express();
 app.set('port', (process.env.PORT || 5000));
+var welcomeMessage = 'Welcome to Jerk du Jour API!';
+
+// Utilities
+var Guid = require('guid');
 
 // Jerk du Jour specific resources
-var report = require('report');
+var Report = require('report');
 
 // Sample reports
 var reports = {};
-var report1_id = 'abcd1234';
-var report2_id = 'efgh5678';
-var report3_id = 'ijkl9123';
-reports[report1_id] = new report.Report(report1_id);
-reports[report2_id] = new report.Report(report2_id);
-reports[report3_id] = new report.Report(report3_id);
+
+function generateReports(n){
+  var reports = {};
+  for(i = 0; i < n; i++){
+    var guid = Guid.create();
+    reports[guid] = new Report.Report(guid);
+  }
+
+  return reports;
+}
 
 // RESTful API
 app.get('/', function(req, res) {
-    res.send('Welcome to Jerk du Jour API!');
+    reports = generateReports(100);
+    var response = welcomeMessage;
+    for(var r in reports){
+      response += '\n' + r + '\n';
+    }
+    res.send(response);
 });
 app.get('/reports', function(req, res) {
     res.send(reports);
