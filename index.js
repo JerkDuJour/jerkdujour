@@ -25,12 +25,7 @@ function generateReports(n){
 
 // RESTful API
 app.get('/', function(req, res) {
-    reports = generateReports(100);
-    var response = welcomeMessage;
-    for(var r in reports){
-      response += '\n' + r + '\n';
-    }
-    res.send(response);
+    res.send(welcomeMessage);
 });
 app.get('/reports', function(req, res) {
     res.send(reports);
@@ -51,4 +46,5 @@ app.get('/reports/:id', function(req, res) {
 //
 app.listen(app.get('port'), function() {
   console.log("Node app is listening on port " + app.get('port'));
+  reports = generateReports(100);
 });
