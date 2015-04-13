@@ -17,7 +17,7 @@ function generateReports(n){
   var reports = {};
   for(i = 0; i < n; i++){
     var guid = Guid.create();
-    reports[guid] = new Report.Report(guid);
+    reports[guid] = new Report(guid);
   }
 
   return reports;
