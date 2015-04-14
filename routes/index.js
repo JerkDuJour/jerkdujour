@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Jerk du Jour', message: 'Hello, world!' });
+  res.render('index', {
+    title: 'Jerk du Jour',
+    message: 'Shame those jerks!'
+    }
+  );
 });
 
 module.exports = router;
